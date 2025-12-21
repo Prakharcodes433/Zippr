@@ -1,9 +1,9 @@
-#  Random Password Generator
+#  Zippr
 
 A sleek, dark-themed random password generator built with focus on security and minimalist design. 
 
 ##  Live 
-**[Click here to view the live site on Vercel](https://password-generator-nine-indol.vercel.app/)**
+**[Click here to view the live site on Vercel](https://zippr.vercel.app/)**
 
 ##  Features
 - **Instant Generation:** Get two high-security passwords with one click.
