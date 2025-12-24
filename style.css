@@ -10,6 +10,10 @@ body {
   color: #FFFFFF;
 }
 
+.social-links #ig:hover{
+  color: #C13584;
+}
+
 .social-links {
   position: absolute;
   top: 30px;
