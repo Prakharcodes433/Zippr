@@ -49,10 +49,6 @@ body {
   transition: 0.3s;
 }
 
-.social-links a:hover {
-  color: #37cf71;
-  transform: translateY(-3px);
-}
 
 .text-container {
   display: flex;
