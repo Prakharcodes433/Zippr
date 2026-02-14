@@ -4,7 +4,7 @@ A sleek, dark-themed random password generator built with a focus on security, h
 
 ---
 
-## ✨ Features
+##  Features
 * **Precision Scaling:** Optimized layout with a 10% reduction in global scaling for a more professional, compact feel.
 * **Dynamic Customization:** Adjust password length via a custom-styled slider and toggle complexity (symbols, numbers, uppercase).
 * **Advanced UI/UX:**
@@ -13,7 +13,7 @@ A sleek, dark-themed random password generator built with a focus on security, h
     * **Responsive Engine:** Fully adaptive layouts for mobile, tablet, and desktop using a custom spacing system.
 * **One-Tap Copy:** Instant interaction for password retrieval with built-in notification alerts.
 
-## 🛠️ Built With
+## Built With
 * **HTML5:** Semantic structure for accessibility and SEO.
 * **CSS3:** Utilizes CSS Variables (Custom Properties), Flexbox, CSS Grid, and sophisticated Media Queries.
 * **JavaScript:** Vanilla JS logic for cryptographically-leaning random string generation.
@@ -21,7 +21,7 @@ A sleek, dark-themed random password generator built with a focus on security, h
 
 ---
 
-## 🎨 Theme Palette
+## Theme Palette
 | Element | Color |
 | :--- | :--- |
 | Background | `#181C1F` |
@@ -31,6 +31,6 @@ A sleek, dark-themed random password generator built with a focus on security, h
 
 ---
 
-## 👨‍💻 Developer
-**Prakhar Patel** *Building secure tools with better design.*
+##  Developer
+**Prakhar Patel**
 
