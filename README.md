@@ -1,34 +1,36 @@
 # Zippr
 
-A sleek, dark-themed random password generator built with a focus on security and minimalist design. 
-
-## 🔗 Live Demo
-**[Click here to view the live site on Vercel](https://zippr.vercel.app/)**
+A sleek, dark-themed random password generator built with a focus on security, high-performance UI transitions, and minimalist design.
 
 ---
 
 ## ✨ Features
-* **Instant Generation:** Get two high-security passwords with one click.
-* **Custom Security:** Uses a wide range of symbols, numbers, and characters.
-* **Responsive Design:** Works perfectly on Laptops, Tablets, and Mobile phones.
-* **Clean UI:** Professional dark mode interface with Montserrat typography.
+* **Precision Scaling:** Optimized layout with a 10% reduction in global scaling for a more professional, compact feel.
+* **Dynamic Customization:** Adjust password length via a custom-styled slider and toggle complexity (symbols, numbers, uppercase).
+* **Advanced UI/UX:**
+    * **Smooth Transitions:** Uses cubic-bezier curves for fluid interactions.
+    * **Glassmorphism:** Navbar features a backdrop-blur for a modern depth effect.
+    * **Responsive Engine:** Fully adaptive layouts for mobile, tablet, and desktop using a custom spacing system.
+* **One-Tap Copy:** Instant interaction for password retrieval with built-in notification alerts.
 
 ## 🛠️ Built With
-* **HTML5:** Semantic structure.
-* **CSS3:** Custom properties, Flexbox, and Media Queries for responsiveness.
-* **JavaScript:** Vanilla JS logic for random string generation.
+* **HTML5:** Semantic structure for accessibility and SEO.
+* **CSS3:** Utilizes CSS Variables (Custom Properties), Flexbox, CSS Grid, and sophisticated Media Queries.
+* **JavaScript:** Vanilla JS logic for cryptographically-leaning random string generation.
+* **Typography:** Powered by 'Poppins' and 'JetBrains Mono' for that technical, high-end look.
+
+---
+
+## 🎨 Theme Palette
+| Element | Color |
+| :--- | :--- |
+| Background | `#181C1F` |
+| Primary Accent | `#00b96b` |
+| Secondary Accent | `#00ea88` |
+| Card Surface | `#23272A` |
 
 ---
 
 ## 👨‍💻 Developer
-**Prakhar Patel** Feel free to connect with me:
-
-
-# Appearance of Zippr 
-
-&nbsp;
-&nbsp;
-&nbsp;
-<a href="https://zippr.vercel.app/"> <img width="594" height="596" alt="Screenshot 2026-01-13 203153" src="https://github.com/user-attachments/assets/b5bdf97f-4fa0-43c9-9e59-b8b51f69a314" /> </a>
- 
+**Prakhar Patel** *Building secure tools with better design.*
 
