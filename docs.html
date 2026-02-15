@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zippr Documentation</title>
+    <link rel="icon" href="zippr3.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #181C1F;
+            --primary-light: #23272A;
+            --primary-dark: #101214;
+            --accent: #00b96b;
+            --accentt: rgb(0, 234, 136);
+            --bg: #181C1F;
+            --bg-card: #23272A;
+            --bg-hover: #23272A;
+            --border: #22272e;
+            --text: #F5F6F7;
+            --text-secondary: #B0B8C1;
+            --text-muted: #7A828A;
+            --white: #fff;
+            --radius-md: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #23272A;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 0;
+            z-index: 3000;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 3001;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--white);
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        .container {
+            display: flex;
+            max-width: 1300px;
+            margin: 80px auto 0;
+            padding: 0 1.5rem;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            width: 260px;
+            position: sticky;
+            top: 100px;
+            height: calc(100vh - 120px);
+            overflow-y: auto;
+            background: var(--bg-card);
+            padding: 2rem 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+
+        .sidebar h2 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sidebar nav a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.4rem;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .sidebar nav a.active,
+        .sidebar nav a:hover {
+            background: rgba(0, 185, 107, 0.1);
+            color: var(--accent);
+        }
+
+        .main {
+            flex: 1;
+            min-width: 0;
+            padding-bottom: 5rem;
+        }
+
+        .section {
+            margin-bottom: 3.5rem;
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+
+        .main h1, .main h2 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        code, pre {
+            background: #101214;
+            color: var(--accentt);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        pre {
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        .footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 4rem 1.5rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links-inline {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links-inline a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links-inline a:hover { color: var(--accent); }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        .footer-social-icons a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-dark);
+            color:white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .footer-social-icons a:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1300px;
+            margin: 3rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar { width: 200px; }
+        }
+
+        @media (max-width: 900px) {
+            .hamburger { display: flex; }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 380px;
+                height: 100vh;
+                background: #1c2023;
+                flex-direction: column;
+                text-align: center;
+                padding: 100px 2rem;
+                transition: 0.4s ease;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+            }
+            .nav-menu.active { right: 0; }
+            .container { flex-direction: column; margin-top: 70px; }
+            .sidebar {
+                position: relative;
+                top: 0;
+                width: 100%;
+                height: auto;
+                margin-bottom: 1.5rem;
+            }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-header { justify-content: center; }
+            .footer-links-inline { justify-content: center; }
+            .footer-social-icons { justify-content: center; }
+            .section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-shield"></i>
+                <span>Zippr</span>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#generator" class="nav-link">Generator</a></li>
+                <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Docs</h2>
+            <nav id="sidebarNav">
+                <a href="#intro" class="active">Introduction</a>
+                <a href="#install">Installation</a>
+                <a href="#usage">Usage</a>
+                <a href="#api">API</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <section id="intro" class="section">
+                <h1>Introduction</h1>
+                <p>Welcome to the Zippr documentation page. Here you will find all the information you need to get started and use Zippr efficiently.</p>
+            </section>
+
+            <section id="install" class="section">
+                <h2>Installation</h2>
+                <p>To install Zippr, simply download the latest release and include it in your project:</p>
+                <pre><code>&lt;script src="zippr.min.js"&gt;&lt;/script&gt;</code></pre>
+            </section>
+
+            <section id="usage" class="section">
+                <h2>Usage</h2>
+                <p>Initialize Zippr in your JavaScript code:</p>
+                <pre><code>const zip = new Zippr();
+zip.compress(files);
+zip.extract(archive);</code></pre>
+            </section>
+
+            <section id="api" class="section">
+                <h2>API Reference</h2>
+                <ul>
+                    <li><b>Zippr.compress(files)</b> - Compresses an array of files.</li>
+                    <li><b>Zippr.extract(archive)</b> - Extracts files from an archive.</li>
+                </ul>
+            </section>
+
+            <section id="faq" class="section">
+                <h2>FAQ</h2>
+                <p><b>Q:</b> Is Zippr free to use?<br><b>A:</b> Yes, Zippr is open source and free for all uses.</p>
+                <p><b>Q:</b> What file types are supported?<br><b>A:</b> Most common file types are supported for compression and extraction.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-header">
+                    <i class="fas fa-shield"></i>
+                    <h3>Zippr</h3>
+                </div>
+                <p>Secure password generation on your device. Simple, private, fast—zero tracking.</p>
+                <div class="footer-links-inline">
+                    <a href="index.html#generator">Generator</a>
+                    <a href="index.html#about">About</a>
+                </div>
+            </div>
+            <div class="footer-social-group">
+                <div class="footer-social-icons">
+                    <a href="https://github.com/prakharr3act" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/prakharr._patel/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.reddit.com/user/PrakharPatel669/" target="_blank"><i class="fab fa-reddit-alien"></i></a>
+                    <a href="https://prakharr3act.github.io/Zippr/" target="_blank"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Version: 1.0.0-R3-Core <br> &copy; 2026 Zippr. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const sidebarLinks = document.querySelectorAll('#sidebarNav a');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
